@@ -1,0 +1,11 @@
+package bitxon.drools;
+
+import bitxon.drools.model.player.Player;
+import bitxon.drools.model.player.Rank;
+
+rule "Rank X"
+	when
+		player:Player(kills > 100000)
+	then
+		System.out.println("Hello");
+end

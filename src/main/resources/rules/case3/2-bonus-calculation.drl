@@ -1,0 +1,33 @@
+package bitxon.drools;
+
+import bitxon.drools.model.player.Player;
+import bitxon.drools.model.player.Rank;
+import bitxon.drools.model.player.Type;
+import bitxon.drools.model.event.BonusCalculated;
+
+rule "Bonus WARRIOR"
+	when
+		player:Player(type == Type.WARRIOR)
+	then
+		BonusCalculated event = new BonusCalculated();
+		event.setBonus(10);
+		drools.insert(event); // Insert new fact to Drools Session
+end
+
+rule "Bonus WIZARD"
+	when
+		player:Player(type == Type.WIZARD)
+	then
+		BonusCalculated event = new BonusCalculated();
+		event.setBonus(20);
+		drools.insert(event); // Insert new fact to Drools Session
+end
+
+rule "Bonus ASSASSIN"
+	when
+		player:Player(type == Type.ASSASSIN)
+	then
+		BonusCalculated event = new BonusCalculated();
+		event.setBonus(30);
+		drools.insert(event); // Insert new fact to Drools Session
+end

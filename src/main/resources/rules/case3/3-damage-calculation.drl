@@ -1,0 +1,162 @@
+package bitxon.drools;
+
+import bitxon.drools.model.player.Player;
+import bitxon.drools.model.player.Rank;
+import bitxon.drools.model.event.BonusCalculated;
+import bitxon.drools.model.event.RankCalculated;
+
+function Integer getBaseDamage(Player player) {
+    if(Type.WARRIOR == player.getType()) {
+        return player.getStrength();
+    }
+    if(Type.WIZARD == player.getType()) {
+        return player.getIntellect();
+    }
+    if(Type.ASSASSIN == player.getType()) {
+        return player.getAgility();
+    }
+    return 0;
+}
+
+global bitxon.drools.support.Result result;
+
+// ================================ WARRIOR ================================
+
+rule "Damage of WARRIOR with NONE rank"
+    when
+        player:Player(type == Type.WARRIOR)
+        rank:RankCalculated(rank == Rank.NONE)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 0);
+end
+
+rule "Damage of WARRIOR with IRON rank"
+    when
+        player:Player(type == Type.WARRIOR)
+        rank:RankCalculated(rank == Rank.IRON)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 1);
+end
+
+rule "Damage of WARRIOR with BRONZE rank"
+    when
+        player:Player(type == Type.WARRIOR)
+        rank:RankCalculated(rank == Rank.BRONZE)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 2);
+end
+
+rule "Damage of WARRIOR with SILVER rank"
+    when
+        player:Player(type == Type.WARRIOR)
+        rank:RankCalculated(rank == Rank.SILVER)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 3);
+end
+
+rule "Damage of WARRIOR with GOLD rank"
+    when
+        player:Player(type == Type.WARRIOR)
+        rank:RankCalculated(rank == Rank.GOLD)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 4);
+end
+
+// ================================ WIZARD ================================
+
+rule "Damage of WIZARD with NONE rank"
+    when
+        player:Player(type == Type.WIZARD)
+        rank:RankCalculated(rank == Rank.NONE)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 0);
+end
+
+rule "Damage of WIZARD with IRON rank"
+    when
+        player:Player(type == Type.WIZARD)
+        rank:RankCalculated(rank == Rank.IRON)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 2);
+end
+
+rule "Damage of WIZARD with BRONZE rank"
+    when
+        player:Player(type == Type.WIZARD)
+        rank:RankCalculated(rank == Rank.BRONZE)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 4);
+end
+
+rule "Damage of WIZARD with SILVER rank"
+    when
+        player:Player(type == Type.WIZARD)
+        rank:RankCalculated(rank == Rank.SILVER)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 6);
+end
+
+rule "Damage of WIZARD with GOLD rank"
+    when
+        player:Player(type == Type.WIZARD)
+        rank:RankCalculated(rank == Rank.GOLD)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 8);
+end
+
+// ================================ ASSASSIN ================================
+
+rule "Damage of ASSASSIN with NONE rank"
+    when
+        player:Player(type == Type.ASSASSIN)
+        rank:RankCalculated(rank == Rank.NONE)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 1);
+end
+
+rule "Damage of ASSASSIN with IRON rank"
+    when
+        player:Player(type == Type.ASSASSIN)
+        rank:RankCalculated(rank == Rank.IRON)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 3);
+end
+
+rule "Damage of ASSASSIN with BRONZE rank"
+    when
+        player:Player(type == Type.ASSASSIN)
+        rank:RankCalculated(rank == Rank.BRONZE)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 5);
+end
+
+rule "Damage of ASSASSIN with SILVER rank"
+    when
+        player:Player(type == Type.ASSASSIN)
+        rank:RankCalculated(rank == Rank.SILVER)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 7);
+end
+
+rule "Damage of ASSASSIN with GOLD rank"
+    when
+        player:Player(type == Type.ASSASSIN)
+        rank:RankCalculated(rank == Rank.GOLD)
+        bonus:BonusCalculated(1 == 1)
+    then
+        result.setValue(getBaseDamage(player) + bonus.getBonus() + 9);
+end

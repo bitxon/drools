@@ -1,0 +1,11 @@
+package bitxon.drools;
+
+//Missed import statement
+import bitxon.drools.model.player.Rank;
+
+rule "Rank X"
+    when
+        $player:Player(kills > 100000)
+    then
+        $player.setRank(Rank.NONE);
+end

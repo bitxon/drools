@@ -1,0 +1,23 @@
+template header
+    ruleName
+    minKills
+    maxKills
+    resultRank
+
+package bitxon.drools;
+
+import bitxon.drools.model.player.Player;
+import bitxon.drools.model.player.Rank;
+
+global bitxon.drools.support.Result result;
+
+template "rank-calculation-template"
+
+rule "Rule: @{ruleName}"
+    when
+        player:Player(kills >= @{minKills}, kills < @{maxKills})
+    then
+        result.setValue(@{resultRank});
+end
+
+end template

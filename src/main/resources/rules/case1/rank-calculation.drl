@@ -1,0 +1,41 @@
+package bitxon.drools;
+
+import bitxon.drools.model.player.Player;
+import bitxon.drools.model.player.Rank;
+
+global bitxon.drools.support.Result result;
+
+rule "Rank 0"
+    when
+        player:Player(kills < 100)
+    then
+        result.setValue(Rank.NONE);
+end
+
+rule "Rank 1"
+    when
+        player:Player(kills >= 100, kills < 200)
+    then
+        result.setValue(Rank.IRON);
+end
+
+rule "Rank 2"
+    when
+        player:Player(kills >= 200, kills < 300)
+    then
+        result.setValue(Rank.BRONZE);
+end
+
+rule "Rank 3"
+    when
+        player:Player(kills >= 300, kills < 400)
+    then
+        result.setValue(Rank.SILVER);
+end
+
+rule "Rank 4"
+    when
+        player:Player(kills >= 400, kills < 500)
+    then
+        result.setValue(Rank.GOLD);
+end

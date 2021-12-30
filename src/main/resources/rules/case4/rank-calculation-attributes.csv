@@ -1,0 +1,5 @@
+Rank 0,0,100,Rank.NONE
+Rank 1,100,200,Rank.IRON
+Rank 2,200,300,Rank.BRONZE
+Rank 3,300,400,Rank.SILVER
+Rank 4,400,500,Rank.GOLD

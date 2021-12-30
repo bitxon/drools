@@ -1,0 +1,50 @@
+package bitxon.drools;
+
+import bitxon.drools.model.player.Player;
+import bitxon.drools.model.player.Rank;
+import bitxon.drools.model.event.RankCalculated;
+
+rule "Rank 0"
+    when
+        player:Player(kills < 100)
+    then
+        RankCalculated event = new RankCalculated();
+        event.setRank(Rank.NONE);
+        drools.insert(event); // Insert new fact to Drools Session
+end
+
+rule "Rank 1"
+    when
+        player:Player(kills >= 100, kills < 200)
+    then
+        RankCalculated event = new RankCalculated();
+        event.setRank(Rank.IRON);
+        drools.insert(event); // Insert new fact to Drools Session
+end
+
+rule "Rank 2"
+    when
+        player:Player(kills >= 200, kills < 300)
+    then
+        RankCalculated event = new RankCalculated();
+        event.setRank(Rank.BRONZE);
+        drools.insert(event); // Insert new fact to Drools Session
+end
+
+rule "Rank 3"
+    when
+        player:Player(kills >= 300, kills < 400)
+    then
+        RankCalculated event = new RankCalculated();
+        event.setRank(Rank.SILVER);
+        drools.insert(event); // Insert new fact to Drools Session
+end
+
+rule "Rank 4"
+    when
+        player:Player(kills >= 400, kills < 500)
+    then
+        RankCalculated event = new RankCalculated();
+        event.setRank(Rank.GOLD);
+        drools.insert(event); // Insert new fact to Drools Session
+end

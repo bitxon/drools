@@ -28,4 +28,7 @@
 - [Test/Executor](src/test/java/bitxon/drools/case4/Case4cTest.java)
 - [DRL template](src/main/resources/rules/case4/rank-calculation-template.drl)
 - [Excel data](src/main/resources/rules/case4/rank-calculation-attributes.xlsx)
+#### DRL template with JDBC ResultSet as data source
+- [Test/Executor](src/test/java/bitxon/drools/case4/Case4dTest.java)
+- [DRL template](src/main/resources/rules/case4/rank-calculation-template.drl)
   

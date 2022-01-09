@@ -15,6 +15,7 @@
     <drools.version>7.63.0.Final</drools.version>
     <lombok.version>1.18.22</lombok.version>
     <junit-jupiter.version>5.8.2</junit-jupiter.version>
+    <h2.version>2.0.206</h2.version>
     <!-- Plugins -->
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
   </properties>
@@ -64,6 +65,13 @@
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>${h2.version}</version>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
 
   <build>

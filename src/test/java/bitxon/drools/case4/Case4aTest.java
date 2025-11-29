@@ -22,7 +22,7 @@ class Case4aTest extends AbstractTest {
     @Override
     protected StatelessKieSession newStatelessKieSession() {
         InputStream template = getClass().getClassLoader()
-            .getResourceAsStream("rules/case4/rank-calculation-template.drl");
+            .getResourceAsStream("rules/case4/rank-calculation.drl.template");
         DataProvider dataProvider = new ArrayDataProvider(new String[][]{
             new String[]{"Rank 0", "0", "100", "Rank.NONE"},
             new String[]{"Rank 1", "100", "200", "Rank.IRON"},

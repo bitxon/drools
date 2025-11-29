@@ -23,7 +23,7 @@ class Case4bTest extends AbstractTest {
     @Override
     protected StatelessKieSession newStatelessKieSession() {
         InputStream template = getClass().getClassLoader()
-            .getResourceAsStream("rules/case4/rank-calculation-template.drl");
+            .getResourceAsStream("rules/case4/rank-calculation.drl.template");
         List<RuleMetadata> dataProvider = List.of(
             new RuleMetadata("Rank 0", 0, 100, Rank.NONE),
             new RuleMetadata("Rank 1", 100, 200, Rank.IRON),

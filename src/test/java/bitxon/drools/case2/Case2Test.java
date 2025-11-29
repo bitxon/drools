@@ -7,6 +7,7 @@ import bitxon.drools.model.player.Player;
 import bitxon.drools.model.player.Rank;
 import bitxon.drools.support.DroolsHelper;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.kie.api.runtime.StatelessKieSession;
@@ -17,7 +18,7 @@ class Case2Test extends AbstractTest {
     @Override
     protected StatelessKieSession newStatelessKieSession() {
         return DroolsHelper
-            .createContainerFromFiles("rules/case2/rank-calculation.xlsx")
+            .createContainerFromFiles("rules/case2/rank-calculation.drl.xlsx")
             .newStatelessKieSession();
     }
 
@@ -35,5 +36,11 @@ class Case2Test extends AbstractTest {
         Rank actualRank = execute(player);
 
         assertEquals(expectedRank, actualRank);
+    }
+
+    @Test
+    void printResultDrl() {
+        var drls = DroolsHelper.generateDrlFromExcel2("rules/case2/rank-calculation.drl.xlsx");
+        System.out.println(drls);
     }
 }

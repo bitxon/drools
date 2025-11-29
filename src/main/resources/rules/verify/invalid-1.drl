@@ -1,4 +1,4 @@
-package bitxon.drools;
+package rules.verify;
 
 //Missed import statement
 import bitxon.drools.model.player.Rank;

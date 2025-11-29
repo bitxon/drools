@@ -1,4 +1,4 @@
-package bitxon.drools;
+package rules.verify;
 
 import bitxon.drools.model.player.Player;
 import bitxon.drools.model.player.Rank;

@@ -8,7 +8,7 @@
 ## Case 2
 #### Simple Microsoft Excel file with all rules in it
 - [Test/Executor](src/test/java/bitxon/drools/case2/Case2Test.java)
-- [Excel file](src/main/resources/rules/case2/rank-calculation.xlsx)
+- [Excel file](src/main/resources/rules/case2/rank-calculation.drl.xlsx)
 
 ## Case 3
 #### Multiple DRL files where one rule depends on another
@@ -20,15 +20,15 @@
 ## Case 4
 #### DRL template with Array Data Provider
 - [Test/Executor](src/test/java/bitxon/drools/case4/Case4aTest.java)
-- [DRL template](src/main/resources/rules/case4/rank-calculation-template.drl)
+- [DRL template](src/main/resources/rules/case4/rank-calculation.drl.template)
 #### DRL template with Object Data Provider
 - [Test/Executor](src/test/java/bitxon/drools/case4/Case4bTest.java)
-- [DRL template](src/main/resources/rules/case4/rank-calculation-template.drl)
+- [DRL template](src/main/resources/rules/case4/rank-calculation.drl.template)
 #### DRL template with Microsoft Excel file as data source
 - [Test/Executor](src/test/java/bitxon/drools/case4/Case4cTest.java)
-- [DRL template](src/main/resources/rules/case4/rank-calculation-template.drl)
+- [DRL template](src/main/resources/rules/case4/rank-calculation.drl.template)
 - [Excel data](src/main/resources/rules/case4/rank-calculation-attributes.xlsx)
 #### DRL template with JDBC ResultSet as data source
 - [Test/Executor](src/test/java/bitxon/drools/case4/Case4dTest.java)
-- [DRL template](src/main/resources/rules/case4/rank-calculation-template.drl)
+- [DRL template](src/main/resources/rules/case4/rank-calculation.drl.template)
   

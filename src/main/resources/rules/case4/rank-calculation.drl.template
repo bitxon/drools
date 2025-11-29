@@ -4,7 +4,7 @@ template header
     maxKills
     resultRank
 
-package bitxon.drools;
+package rules.case4;
 
 import bitxon.drools.model.player.Player;
 import bitxon.drools.model.player.Rank;

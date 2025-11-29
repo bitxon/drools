@@ -20,7 +20,7 @@ class Case4cTest extends AbstractTest {
     @Override
     protected StatelessKieSession newStatelessKieSession() {
         InputStream template = getClass().getClassLoader()
-            .getResourceAsStream("rules/case4/rank-calculation-template.drl");
+            .getResourceAsStream("rules/case4/rank-calculation.drl.template");
         InputStream data = getClass().getClassLoader()
             .getResourceAsStream("rules/case4/rank-calculation-attributes.xlsx");
 

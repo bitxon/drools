@@ -23,7 +23,7 @@ class Case4dTest extends AbstractTest {
     @Override
     protected StatelessKieSession newStatelessKieSession() {
         InputStream template = getClass().getClassLoader()
-            .getResourceAsStream("rules/case4/rank-calculation-template.drl");
+            .getResourceAsStream("rules/case4/rank-calculation.drl.template");
 
         // To simplify example we use mock ResultSet, but we could use real Db connection and query execution
         ResultSet rs = createTestResultSet();
